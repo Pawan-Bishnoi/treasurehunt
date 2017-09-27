@@ -1,0 +1,21 @@
+{
+  "name": "treasure_hunt",
+  "version": "1.0.0",
+  "description": "a portal to be used in treasure hunting events",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Pawan Bishnoi, Jai Bishnoi",
+  "license": "ISC",
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.5",
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.13",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.4"
+  }
+}

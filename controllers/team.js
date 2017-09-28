@@ -21,7 +21,7 @@ team.home = function (req, res, next) {
 		if (req.xhr)
 			return res.status (200).send (question);
 
-		return res.send ({question: question});
+		return res.render ('challenge', question);
 	});
 };
 

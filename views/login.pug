@@ -63,9 +63,9 @@ html
   body
     .login
       h1 Login
-      form(method='post')
-        input#name(type='text', name='u', placeholder='Username', required='required')
-        input#password(type='password', name='p', placeholder='Password', required='required')
+      form(method='post' action='/login')
+        input#name(type='text', name='username', placeholder='Username', required='required')
+        input#password(type='password', name='password', placeholder='Password', required='required')
         button#login.btn.btn-primary.btn-block.btn-large(type='submit') Let me in.
-    script(src='js/login.js')
+    //script(src='js/login.js')
 

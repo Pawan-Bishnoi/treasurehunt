@@ -24,6 +24,7 @@ app.set ('view engine', 'pug');
  * Global middlewares */
 app.use (express.static (path.join(__dirname, 'public')));
 app.use (json_parser);
+app.use (body_parser.urlencoded ({ extended: false }));
 app.use (session ({
 	secret: 'bansal_ki_car',
 	resave: true,

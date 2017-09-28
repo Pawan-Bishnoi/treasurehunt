@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "app-module-path": "^2.2.0",
+    "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.5",
     "express-session": "^1.15.5",

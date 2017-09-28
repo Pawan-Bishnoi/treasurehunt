@@ -5,6 +5,7 @@ var team = {};
 team.home = function (req, res, next) {
 
 	var __team = req.user;
+	var params = req.query;
 
 	var query = {};
 	query.level = __team.level || 0;
@@ -18,10 +19,10 @@ team.home = function (req, res, next) {
 		if (!question)
 			return res.status (400).send ({err: 'NOT_FOUND'});
 
-		if (req.xhr)
+		if (req.xhr || params.api)
 			return res.status (200).send (question);
 
-		return res.render ('challenge', question);
+		return res.render ('challenge', question[0]);
 	});
 };
 

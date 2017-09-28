@@ -3,7 +3,7 @@ var mongoose = require ('mongoose');
 // make the level auto increment -- TODO
 var schema = new mongoose.Schema ({
 	level      : { type: Number, required: true},
-	team       : { type: Number, required: true},
+	team       : { type: String, required: true, trim: true},
 	statement  : { type: String, required: true, trim: true},
 	answer     : { type: String, required: true, trim: true},
 });
@@ -22,4 +22,4 @@ schema.method ('toJSON', function () {
 	};
 });
 
-module.exports = mongoose.model ('Level', schema);
+module.exports = mongoose.model ('Question', schema);

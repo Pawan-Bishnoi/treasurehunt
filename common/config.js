@@ -5,6 +5,10 @@ config.app = {
 	secret : 'namashkaar'          // WARN : Use your own key here !
 };
 
+config.ops = {
+	delete : 'disabled'  /* disabled, enabled */
+};
+
 config.db = {
 	url : "mongodb://localhost/hunt"
 };

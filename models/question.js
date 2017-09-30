@@ -8,8 +8,10 @@ var schema = new mongoose.Schema ({
 	answer     : { type: String, required: true, trim: true},
 });
 
+// team + level is the composite key here
+schema.index ({team: 1, level: 1}, {unique: true});
 
-schema.methods.verifyAnswer = function (answer, cb) {
+schema.methods.verifyAnswer = function (answer) {
 	return answer && (answer === this.answer);
 };
 

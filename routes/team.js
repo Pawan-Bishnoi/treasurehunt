@@ -11,6 +11,7 @@ router.post ('/login', auth.authenticate);
 router.use (ensure_authenticated);
 
 router.get  ('/challenge', team.home);
+router.post  ('/challenge', team.post);
 
 
 

@@ -97,7 +97,13 @@ admin.get_questions = function (req, res, next) {
 	obj.team = team;
 	obj.level = level;
 
-	var query = Question.find(obj);
+	var query;
+	if (obj.team || obj.level) {
+		query = Question.find(obj);
+	}
+	else {
+		query = Question.find({});
+	}
 
 	query.limit (limit);
 	query.lean ();

@@ -94,8 +94,11 @@ admin.get_questions = function (req, res, next) {
 	var limit = 50;
 
 	var obj = {};
-	obj.team = team;
-	obj.level = level;
+	if (obj.team)
+		obj.team = team;
+
+	if (obj.level)
+		obj.level = level;
 
 	var query;
 	if (obj.team || obj.level) {

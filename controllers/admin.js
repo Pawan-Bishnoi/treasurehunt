@@ -1,5 +1,6 @@
 var Team = require ('models/team');
 var Question = require ('models/question');
+var config = require ('common/config');
 
 var admin = {};
 

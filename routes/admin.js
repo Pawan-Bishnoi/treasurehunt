@@ -13,6 +13,8 @@ router.post ('/get-questions', admin.get_questions);
 router.post ('/team', admin.add_team);
 router.post ('/question', admin.add_question);
 
+router.put ('/team', admin.update_team);
+router.put ('/question', admin.update_question);
 
 /* not in master */
 router.delete ('/team', admin.drop_teams);

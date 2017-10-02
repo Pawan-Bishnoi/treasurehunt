@@ -22,6 +22,40 @@ admin.add_question = function (req, res, next) {
 	});
 };
 
+admin.update_team = function (req, res, next) {
+	var payload = req.body;
+
+	var query = {};
+	query.name = payload.name;
+	Team.update (query, {level: payload.level}, function (err, num) {
+		if (err)
+			return res.status (500).send ({err: err});
+
+		res.status (200).send ({num: num});
+	});
+
+};
+
+admin.update_question = function (req, res, next) {
+	var payload = req.body;
+
+	var query = {};
+
+	query.team = payload.team;
+	query.level = payload.level;
+
+	if (!query.team || !query.level)
+		return res.status (500).send ({ err: 'mandatory params missing' });
+
+	/* update the fields that were supplied */
+	Question.update(query, payload, function (err, num) {
+		if (err)
+			return res.status (500).send ({err: err});
+
+		res.status (200).send ({num: num});
+	});
+};
+
 admin.drop_questions = function (req, res, next) {
 	if (!config.ops || config.ops.delete !== 'enabled') {
 		return res.status (401).send ({message : 'option not available !'});
@@ -70,7 +104,7 @@ admin.get_teams = function (req, res, next) {
 	var name = q_params.name;
 	var limit = 50;
 
-	var obj;
+	var obj = {};
 	if (name)
 		obj.name = name;
 

@@ -18,7 +18,8 @@ team.home = function (req, res, next) {
 			return res.status (500).send (err);
 
 		if (!question) {
-			return res.status (200).send ({message: 'level #' + query.level + ' not found, have you completed all of em ?'});
+			return res.render ('final', {message: 'Please contact the admins for futher rounds, Thanks :)'});
+			//return res.status (200).send ({message: 'level #' + query.level + ' not found, have you completed all of em ?'});
 		}
 
 		if (req.xhr || params.api)

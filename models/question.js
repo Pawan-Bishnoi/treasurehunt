@@ -13,7 +13,19 @@ var schema = new mongoose.Schema ({
 schema.index ({team: 1, level: 1}, {unique: true});
 
 schema.methods.verifyAnswer = function (answer) {
-	return answer && (answer === this.answer);
+	if (!answer)
+		return false;
+
+	if (answer.toLowerCase) {
+		answer = answer.toLowerCase();
+	}
+
+	var should_be = this.answer;
+	if (should_be.toLowerCase) {
+		should_be = should_be.toLowerCase();
+	}
+
+	return answer === should_be;
 };
 
 schema.method ('toJSON', function () {

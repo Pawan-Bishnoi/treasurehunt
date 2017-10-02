@@ -10,9 +10,16 @@ router.post ('/login', auth.authenticate);
 /** Must be authenticated **/
 router.use (ensure_authenticated);
 
+router.get ('/', function (req, res, next) {
+	return res.redirect ('/challenge');
+});
 router.get  ('/challenge', team.home);
 router.post  ('/challenge', team.post);
 
+router.get ('/logout', function (req, res, next) {
+	req.logout ();
+	res.redirect ('/login');
+});
 
 
 function ensure_authenticated (req, res, next) {

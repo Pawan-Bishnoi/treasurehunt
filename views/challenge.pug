@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta(charset='UTF-8')
-    title puTa!!!
+    title Go Find It!
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
     style.
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -65,6 +65,8 @@ html
       h1 Level #{level}
       div
         p(style="color:white;") #{statement}
+        if url
+            img(src=url)
         div
           form(method='post')
             input#answer(type='text', name='answer', placeholder='Your Response', required='required')

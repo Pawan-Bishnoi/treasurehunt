@@ -6,6 +6,7 @@ var schema = new mongoose.Schema ({
 	team       : { type: String, required: true, trim: true},
 	statement  : { type: String, required: true, trim: true},
 	answer     : { type: String, required: true, trim: true},
+	url        : { type: String, trim: true}
 });
 
 // team + level is the composite key here
@@ -18,6 +19,7 @@ schema.methods.verifyAnswer = function (answer) {
 schema.method ('toJSON', function () {
 	return {
 		id    : this._id,
+		url   : this.url,
 		team  : this.team,
 		level  : this.level,
 		statement : this.statement

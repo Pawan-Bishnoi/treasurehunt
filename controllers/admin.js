@@ -128,10 +128,10 @@ admin.get_questions = function (req, res, next) {
 	var limit = 50;
 
 	var obj = {};
-	if (obj.team)
+	if (q_params.team)
 		obj.team = team;
 
-	if (obj.level)
+	if (q_params.level)
 		obj.level = level;
 
 	var query;
